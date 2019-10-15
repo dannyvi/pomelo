@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-09 06:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: pomelo/authjwt/models.py:7
+msgid "Phone"
+msgstr "手机"
+
+#: pomelo/authjwt/models.py:9
+msgid "email address"
+msgstr "电子邮件"
+
+#: pomelo/authjwt/serializers.py:39
+msgid "email or phone field required"
+msgstr "需要email或者phone"
+
+#: pomelo/authjwt/urls.py:23
+msgid "Token"
+msgstr "令牌"
+
+#: pomelo/authjwt/urls.py:34
+msgid "Refresh"
+msgstr "刷新"
+
+#: pomelo/authjwt/urls.py:43
+msgid "login for access token."
+msgstr "获取access"
+
+#: pomelo/authjwt/urls.py:48
+msgid "refresh new access token."
+msgstr "刷新access"
+
+#: pomelo/authjwt/views.py:24
+msgid "search email | phone "
+msgstr "查找 email | phone"
+
+#: pomelo/authjwt/views.py:26
+msgid "User infomation"
+msgstr "用户信息"
+
+#: pomelo/authjwt/views.py:44
+msgid "get username by email or phone"
+msgstr "通过email或者phone获取用户名"
+
+#: pomelo/authjwt/views.py:56 pomelo/authjwt/views.py:58
+#, python-brace-format
+msgid "user not found:  {q_str} "
+msgstr "没找到用户: {q_str}"
+
+#: pomelo/authjwt/views.py:62
+msgid "Only Admin User can get User list."
+msgstr "只有Admin用户可以获取用户列表。"
+
+#: pomelo/authjwt/views.py:65
+msgid "Create new user."
+msgstr "创建新用户。"
+
+#: pomelo/authjwt/views.py:67
+msgid "Create"
+msgstr "创建"
+
+#: pomelo/authjwt/views.py:73
+msgid "At least one of email|phone field."
+msgstr "email或phone至少需要一个"
+
+#: pomelo/authjwt/views.py:79
+msgid ""
+"Get User infomation. \n"
+" Permissions: Is Owner."
+msgstr ""
+"获取用户信息. \n"
+"权限：用户。"
+
+#: pomelo/authjwt/views.py:82
+#, fuzzy
+#| msgid ""
+#| "Get User infomation. \n"
+#| " Permissions: Is Owner."
+msgid ""
+"Update user info.\n"
+" Permissions: Is Owner."
+msgstr ""
+"获取用户信息. \n"
+"权限：用户。"
+
+#: pomelo/authjwt/views.py:84
+msgid "BaseUser"
+msgstr "基本用户"
+
+#: pomelo/authjwt/views.py:89
+msgid "Anyone or both."
+msgstr "任意组合。"
+
+#: pomelo/authjwt/views.py:94
+msgid "Delete user."
+msgstr "删除用户。"
+
+#: pomelo/authjwt/views.py:116
+msgid "set password"
+msgstr "设置密码"
+
+#: pomelo/buyer/models.py:15
+msgid "Receiver"
+msgstr "收件人"
+
+#: pomelo/buyer/models.py:16
+msgid "Mobile"
+msgstr "手机"
+
+#: pomelo/buyer/models.py:17
+msgid "Area"
+msgstr "区域"
+
+#: pomelo/buyer/models.py:18
+msgid "Address"
+msgstr "地址"
+
+#: pomelo/buyer/models.py:19
+msgid "Owner"
+msgstr "主人"
+
+#: pomelo/buyer/models.py:32
+msgid "Name"
+msgstr "名字"
+
+#: pomelo/buyer/models.py:33
+msgid "Avatar"
+msgstr "头像"
+
+#: pomelo/buyer/models.py:35
+msgid "Current Address"
+msgstr "当前地址"
+
+#: pomelo/errors.py:8
+msgid "Field Error"
+msgstr "域错误"
+
+#: pomelo/generic/views.py:15 pomelo/generic/views.py:20
+msgid "Upload image."
+msgstr "上传图片"
+
+#: pomelo/settings.py:34
+msgid ""
+"The '{}' setting has been removed. Please refer to '{}' for available "
+"settings."
+msgstr "'{}' 设置已失效。请设置 '{}'"
+
+#~ msgid "Update user info."
+#~ msgstr "更新用户信息。"
+
+#~ msgid ""
+#~ "Partial Update. \n"
+#~ " Permissions: Is Owner."
+#~ msgstr ""
+#~ "获取用户信息. \n"
+#~ "权限：用户。"
+
+#~ msgid "login"
+#~ msgstr "token登录"
+
+#~ msgid "password"
+#~ msgstr "密码"
