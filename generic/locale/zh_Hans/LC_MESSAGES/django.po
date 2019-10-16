@@ -17,14 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: errors.py:8
-msgid "Field Error"
-msgstr "域错误"
-
-#: settings.py:34
-msgid ""
-"The '{}' setting has been removed. Please refer to '{}' for available "
-"settings."
+#: generic/views.py:15 generic/views.py:18
+msgid "Upload image."
 msgstr ""
-"'{}' 设置已经失效。请重新设置 '{}' 。"

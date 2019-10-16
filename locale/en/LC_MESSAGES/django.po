@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 05:29+0000\n"
+"POT-Creation-Date: 2019-10-16 08:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,136 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: pomelo/authjwt/models.py:7
-msgid "Phone"
-msgstr ""
-
-#: pomelo/authjwt/models.py:9
-msgid "email address"
-msgstr ""
-
-#: pomelo/authjwt/serializers.py:39
-msgid "email or phone field required"
-msgstr ""
-
-#: pomelo/authjwt/urls.py:23
-msgid "Token"
-msgstr ""
-
-#: pomelo/authjwt/urls.py:34
-msgid "Refresh"
-msgstr ""
-
-#: pomelo/authjwt/urls.py:43
-msgid "login for access token."
-msgstr ""
-
-#: pomelo/authjwt/urls.py:48
-msgid "refresh new access token."
-msgstr ""
-
-#: pomelo/authjwt/views.py:24
-msgid "search email | phone "
-msgstr ""
-
-#: pomelo/authjwt/views.py:26
-msgid "User infomation"
-msgstr ""
-
-#: pomelo/authjwt/views.py:44
-msgid "get username by email or phone"
-msgstr ""
-
-#: pomelo/authjwt/views.py:56 pomelo/authjwt/views.py:58
-#, python-brace-format
-msgid "user not found:  {q_str} "
-msgstr ""
-
-#: pomelo/authjwt/views.py:62
-msgid "Only Admin User can get User list."
-msgstr ""
-
-#: pomelo/authjwt/views.py:65
-msgid "Create new user."
-msgstr ""
-
-#: pomelo/authjwt/views.py:67
-msgid "Create"
-msgstr ""
-
-#: pomelo/authjwt/views.py:73
-msgid "At least one of email|phone field."
-msgstr ""
-
-#: pomelo/authjwt/views.py:79
-msgid ""
-"Get User infomation. \n"
-" Permissions: Is Owner."
-msgstr ""
-
-#: pomelo/authjwt/views.py:83
-msgid "Update user info."
-msgstr ""
-
-#: pomelo/authjwt/views.py:85
-msgid ""
-"Partial Update. \n"
-" Permissions: Is Owner."
-msgstr ""
-
-#: pomelo/authjwt/views.py:90
-msgid "Anyone or both."
-msgstr ""
-
-#: pomelo/authjwt/views.py:94
-msgid "Delete user."
-msgstr ""
-
-#: pomelo/authjwt/views.py:116
-msgid "set password"
-msgstr ""
-
-#: pomelo/buyer/models.py:15
-msgid "Receiver"
-msgstr ""
-
-#: pomelo/buyer/models.py:16
-msgid "Mobile"
-msgstr ""
-
-#: pomelo/buyer/models.py:17
-msgid "Area"
-msgstr ""
-
-#: pomelo/buyer/models.py:18
-msgid "Address"
-msgstr ""
-
-#: pomelo/buyer/models.py:19
-msgid "Owner"
-msgstr ""
-
-#: pomelo/buyer/models.py:32
-msgid "Name"
-msgstr ""
-
-#: pomelo/buyer/models.py:33
-msgid "Avatar"
-msgstr ""
-
-#: pomelo/buyer/models.py:35
-msgid "Current Address"
-msgstr ""
-
-#: pomelo/errors.py:8
+#: errors.py:8
 msgid "Field Error"
 msgstr ""
 
-#: pomelo/generic/views.py:15 pomelo/generic/views.py:20
-msgid "Upload image."
-msgstr ""
-
-#: pomelo/settings.py:34
+#: settings.py:34
 msgid ""
 "The '{}' setting has been removed. Please refer to '{}' for available "
 "settings."

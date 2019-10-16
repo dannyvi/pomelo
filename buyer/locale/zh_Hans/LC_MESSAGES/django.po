@@ -17,14 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: errors.py:8
-msgid "Field Error"
-msgstr "域错误"
-
-#: settings.py:34
-msgid ""
-"The '{}' setting has been removed. Please refer to '{}' for available "
-"settings."
+#: buyer/models.py:15
+msgid "Receiver"
 msgstr ""
-"'{}' 设置已经失效。请重新设置 '{}' 。"
+
+#: buyer/models.py:16
+msgid "Mobile"
+msgstr "手机号"
+
+#: buyer/models.py:17
+msgid "Area"
+msgstr "区域"
+
+#: buyer/models.py:18
+msgid "Address"
+msgstr "地址"
+
+#: buyer/models.py:19
+msgid "Owner"
+msgstr "主人"
+
+#: buyer/models.py:32
+msgid "Name"
+msgstr "名字"
+
+#: buyer/models.py:33
+msgid "Avatar"
+msgstr "头像"
+
+#: buyer/models.py:35
+msgid "Current Address"
+msgstr "当前地址"
