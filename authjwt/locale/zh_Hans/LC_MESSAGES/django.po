@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-16 08:48+0800\n"
+"POT-Creation-Date: 2019-10-16 10:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,68 +17,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:7
+#: authjwt/models.py:7
 msgid "Phone"
 msgstr "手机号"
 
-#: models.py:9
+#: authjwt/models.py:9
 msgid "email address"
 msgstr "电子邮件"
 
-#: serializers.py:39
+#: authjwt/serializers.py:39
 msgid "email or phone field required"
 msgstr "需要email 或者 phone"
 
-#: urls.py:23
+#: authjwt/urls.py:23
 msgid "Token"
 msgstr "令牌"
 
-#: urls.py:34
+#: authjwt/urls.py:34
 msgid "Refresh"
 msgstr "刷新"
 
-#: urls.py:43
+#: authjwt/urls.py:43
 msgid "login for access token."
 msgstr "token登录"
 
-#: urls.py:48
+#: authjwt/urls.py:48
 msgid "refresh new access token."
 msgstr "获取新的令牌"
 
-#: views.py:24
+#: authjwt/views.py:24
 msgid "search email | phone "
 msgstr "搜索 email 或 phone"
 
-#: views.py:26
+#: authjwt/views.py:26
 msgid "User infomation"
 msgstr "用户信息"
 
-#: views.py:44
+#: authjwt/views.py:44
 msgid "get username by email or phone"
 msgstr "通过email 或 phone 获取用户名"
 
-#: views.py:56 views.py:58
+#: authjwt/views.py:56 authjwt/views.py:58
 #, python-brace-format
 msgid "user not found:  {q_str} "
 msgstr "用户没找到 {q_str}"
 
-#: views.py:62
+#: authjwt/views.py:62
 msgid "Only Admin User can get User list."
 msgstr "只有管理员可以查看用户列表。"
 
-#: views.py:65
+#: authjwt/views.py:65
 msgid "Create new user."
 msgstr "创建新用户"
 
-#: views.py:67
+#: authjwt/views.py:67
 msgid "Create"
 msgstr "创建"
 
-#: views.py:73
+#: authjwt/views.py:73
 msgid "At least one of email|phone field."
 msgstr "至少需要一个域 email | phone"
 
-#: views.py:79
+#: authjwt/views.py:79
 msgid ""
 "Get User infomation. \n"
 " Permissions: Is Owner."
@@ -86,7 +86,7 @@ msgstr ""
 "获取用户信息。\n"
 "权限： Is Owner."
 
-#: views.py:82
+#: authjwt/views.py:82
 msgid ""
 "Update user info.\n"
 " Permissions: Is Owner."
@@ -94,18 +94,18 @@ msgstr ""
 "更新用户信息。\n"
 "权限: Is Owner."
 
-#: views.py:84
+#: authjwt/views.py:84
 msgid "BaseUser"
 msgstr "基本用户"
 
-#: views.py:89
+#: authjwt/views.py:89
 msgid "Anyone or both."
 msgstr "两个或者其中一个。"
 
-#: views.py:94
+#: authjwt/views.py:94
 msgid "Delete user."
 msgstr "删除用户。"
 
-#: views.py:116
+#: authjwt/views.py:116
 msgid "set password"
 msgstr "设置密码"

@@ -3,10 +3,16 @@ from pomelo.buyer.models import Profile
 from pomelo.buyer.serializers import ProfileSerializer
 from rest_framework import permissions
 from pomelo.permissions import IsOwnerOrReadOnly
-# from django.utils.decorators import method_decorator
-# from drf_yasg.utils import swagger_auto_schema
+from pomelo.decorators import swagger_viewset
+from django.utils.translation import gettext_lazy as _
 
-
+@swagger_viewset(
+    _('User-Profile'),
+    _('Buyer profile entry.\n'
+      '`list`method provide all profiles for **Admin**,'
+      ' and one for **Buyer**.\n'
+      'Admin User has all permissions.\n'
+      'Buyer User has **object permission** for his own profile.'))
 class ProfileViewSet(ModelViewSet):
     """Buyer profile entry.
 

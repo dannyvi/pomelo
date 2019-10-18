@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-16 08:50+0800\n"
+"POT-Creation-Date: 2019-10-16 10:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
 #: buyer/models.py:15
 msgid "Receiver"
-msgstr ""
+msgstr "收货人"
 
 #: buyer/models.py:16
 msgid "Mobile"
@@ -48,3 +49,19 @@ msgstr "头像"
 #: buyer/models.py:35
 msgid "Current Address"
 msgstr "当前地址"
+
+#: buyer/views.py:10
+msgid "User-Profile"
+msgstr "用户信息"
+
+#: buyer/views.py:11
+msgid ""
+"Buyer profile entry.\n"
+"`list`method provide all profiles for **Admin**, and one for **Buyer**.\n"
+"Admin User has all permissions.\n"
+"Buyer User has **object permission** for his own profile."
+msgstr ""
+"买家个人信息。\n"
+"`list`方法为**Admin**用户提供全部信息，为**Buyer**提供一个他自己的信息。\n"
+"Admin用户拥有全部权限。\n"
+"Buyer用户有对于他自己信息的对象权限。"

@@ -1,17 +1,31 @@
 from rest_framework.renderers import JSONRenderer
 
+def _expand_list_or_dict_recursively(data):
+    if isinstance(data, dict):
+        return '\n'.join([f'{key} : {_expand_list_or_dict_recursively(value)}'
+                          if key != 'detail' else
+                          f'{_expand_list_or_dict_recursively(value)}' for
+                          key, value in data.items() ])
+    elif isinstance(data, list):
+        return '\n'.join([_expand_list_or_dict_recursively(d) for d in data])
+    else:
+        return data
+
+
 class PomeloRenderer(JSONRenderer):
     def render(self, data, accepted_media_type=None, renderer_context=None):
         success=True
+        status_code=200
         try:
             response = renderer_context['response']
-            status_code = response.status_code
-
-            if status_code >= 300:
+            if int(response.status_code) >= 300:
                 success = False
+                status_code = response.status_code
         except:
             pass
-        data = {'success': True, 'data': data}
-
+        if success:
+            data = {'status':status_code, 'data': data}
+        else:
+            data = {'status': status_code, 'message': _expand_list_or_dict_recursively(data)}
         return super().render(data, accepted_media_type, renderer_context)
 
