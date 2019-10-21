@@ -35,9 +35,10 @@ class BaseUserSerializer(serializers.ModelSerializer):
         """create BaseUser instance."""
         email = validated_data.pop("email", None)
         phone = validated_data.pop("phone", None)
-        if email is None and phone is None:
+        username = validated_data.pop("username", None)
+        if email is None and phone is None and username is None:
             raise FieldError(_("email or phone field required"))
-        username = get_valid_username()
+        # username = get_valid_username()
         validated_data.update(username=username, email=email, phone=phone)
         password = validated_data.pop('password', None)
         user = self.Meta.model(**validated_data)

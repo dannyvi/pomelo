@@ -41,21 +41,21 @@ user_response = openapi.Response(_('User infomation'), UserNameSerializer)
 #  "user": {"id": 305, "username": "alan","nickname": "傅", "email": "yaolin.fu@sagene.com.cn", "is_admin": False} }})
 
 
-@swagger_auto_schema(method='get', operation_description=_('get username by email or phone'),
-                     manual_parameters=[test_param], responses={200: user_response})
-@api_view(['get'])
-def get_username(request):
-    """get username by email or phone."""
-    q_str = request.GET.get('search', None)
-    q = Q(phone=q_str) | Q(email=q_str)
-    try:
-        user = UserModel.objects.filter(q)[0]
-        serializer = UserNameSerializer(user)
-        return Response(serializer.data)
-    except ObjectDoesNotExist:
-        raise NotFound(_(f'user not found:  {q_str} '))
-    except IndexError:
-        raise NotFound(_(f'user not found:  {q_str} '))
+# @swagger_auto_schema(method='get', operation_description=_('get username by email or phone'),
+#                      manual_parameters=[test_param], responses={200: user_response})
+# @api_view(['get'])
+# def get_username(request):
+#     """get username by email or phone."""
+#     q_str = request.GET.get('search', None)
+#     q = Q(phone=q_str) | Q(email=q_str)
+#     try:
+#         user = UserModel.objects.filter(q)[0]
+#         serializer = UserNameSerializer(user)
+#         return Response(serializer.data)
+#     except ObjectDoesNotExist:
+#         raise NotFound(_(f'user not found:  {q_str} '))
+#     except IndexError:
+#         raise NotFound(_(f'user not found:  {q_str} '))
 
 @method_decorator(name='list',
                   decorator=swagger_auto_schema(

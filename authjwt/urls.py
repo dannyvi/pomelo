@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import (
 )
 
 from pomelo.settings import api_settings
-from .views import BaseUserViewset, get_username
+from .views import BaseUserViewset
 
 RouterClass = api_settings.DEFAULT_ROUTER
 router = RouterClass()
@@ -52,6 +52,6 @@ refresh = method_decorator(name='post',
 urlpatterns = [
     path('token', token.as_view(), name='token_obtain_pair'),
     path('token/refresh', refresh.as_view(), name='token_refresh'),
-    path('get_username', get_username, name='username'),
+    #path('get_username', get_username, name='username'),
     path('', include((router.urls, 'buyer'), namespace='user')),
 ]
