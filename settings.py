@@ -12,7 +12,7 @@ USER_SETTINGS = getattr(settings, 'POMELO', None)
 DEFAULTS = {
     'SIGNING_KEY': settings.SECRET_KEY,
     'VERIFYING_KEY': None,
-    'PROFILE_MODEL': 'buyer.Profile',
+    #'PROFILE_MODEL': 'buyer.Profile',
     'IMAGE_MODEL': 'generic.Image',
 
     'DEFAULT_ROUTER': 'pomelo.routers.MinorRouter'

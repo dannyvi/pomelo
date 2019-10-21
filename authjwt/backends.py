@@ -29,3 +29,7 @@ class MultiFieldLoginModelBackend(ModelBackend):
         else:
             if user.check_password(password) and self.user_can_authenticate(user):
                 return user
+
+    def has_perm(self, user_obj, perm, obj):
+        """We don't configure permissions here."""
+        return None

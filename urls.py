@@ -47,7 +47,7 @@ doc_patterns = [
 
 v1_patterns = [
     path('auth/', include('pomelo.authjwt.urls', namespace='auth_module')),
-    path('buyer/', include('pomelo.buyer.urls')),
+    #path('buyer/', include('pomelo.buyer.urls')),
     path('generic/', include('pomelo.generic.urls')),
 ]
 

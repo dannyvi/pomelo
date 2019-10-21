@@ -37,7 +37,7 @@ class BaseUserSerializer(serializers.ModelSerializer):
         phone = validated_data.pop("phone", None)
         username = validated_data.pop("username", None)
         if email is None and phone is None and username is None:
-            raise FieldError(_("email or phone field required"))
+            raise FieldError(_("email or phone or username field required"))
         # username = get_valid_username()
         validated_data.update(username=username, email=email, phone=phone)
         password = validated_data.pop('password', None)

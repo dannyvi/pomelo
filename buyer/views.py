@@ -1,9 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
-from pomelo.buyer.models import Profile
-from pomelo.buyer.serializers import ProfileSerializer
+from .models import Profile
+from .serializers import ProfileSerializer
 from rest_framework import permissions
-from pomelo.permissions import IsOwnerOrReadOnly
-from pomelo.decorators import swagger_viewset
+from ..permissions import IsOwnerOrReadOnly
+from ..decorators import swagger_viewset
 from django.utils.translation import gettext_lazy as _
 
 @swagger_viewset(
