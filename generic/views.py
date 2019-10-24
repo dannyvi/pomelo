@@ -15,7 +15,13 @@ class ImageUploadSerializer(serializers.Serializer):
     url = serializers.ImageField(help_text=_("Upload image."))
 
 
-@md(name='create', decorator=sas(manual_parameters=[openapi.Parameter('url', openapi.IN_FORM, description=_('Upload image.'), type=openapi.TYPE_FILE), ]))
+@md(name='create',
+    decorator=sas(
+        manual_parameters=[openapi.Parameter('url',
+                                             openapi.IN_FORM,
+                                             description=_('Upload image.'),
+                                             type=openapi.TYPE_FILE), ],
+        tags=['图片上传']))
 @parser_classes([MultiPartParser, ])
 class ImageViewSet(ModelViewSet):
     """Image Management Viewset."""

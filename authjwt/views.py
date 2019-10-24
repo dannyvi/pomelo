@@ -60,6 +60,7 @@ user_response = openapi.Response(_('User infomation'), UserNameSerializer)
 @method_decorator(name='list',
                   decorator=swagger_auto_schema(
                       operation_description=_('Only Admin User can get User list.'),
+                      tags=['用户登录'],
                       responses={'200': BaseUserSerializer(many=True)}))
 @method_decorator(name='create', decorator=swagger_auto_schema(
     operation_description=_('Create new user.'),
@@ -72,14 +73,17 @@ user_response = openapi.Response(_('User infomation'), UserNameSerializer)
             'phone': openapi.Schema(type=openapi.TYPE_STRING),
             'password': openapi.Schema(type=openapi.TYPE_STRING,  description=_('At least one of email|phone field.'))
     }),
-    responses={'200': BaseUserSerializer}
+    responses={'200': BaseUserSerializer},
+    tags=['用户登录']
 ))
 @method_decorator(name='retrieve',
                   decorator=swagger_auto_schema(
                       operation_description=_('Get User infomation. \n Permissions: Is Owner.'),
+                      tags=['用户登录']
 ))
 @method_decorator(name='partial_update', decorator=swagger_auto_schema(
     operation_description=_('Update user info.\n Permissions: Is Owner.'),
+    tags=['用户登录'],
     request_body=openapi.Schema(
         title=_('BaseUser'),
         type=openapi.TYPE_OBJECT,
@@ -91,7 +95,7 @@ user_response = openapi.Response(_('User infomation'), UserNameSerializer)
     ),
     responses={'200': BaseUserSerializer}
 ))
-@method_decorator(name='destroy', decorator=swagger_auto_schema(operation_description=_('Delete user.')))
+@method_decorator(name='destroy', decorator=swagger_auto_schema(operation_description=_('Delete user.'),tags=['用户登录']))
 class BaseUserViewset(ModelViewSet):
     """
     A simple ViewSet for viewing and editing accounts.
@@ -113,7 +117,7 @@ class BaseUserViewset(ModelViewSet):
             permission_classes = [permissions.IsAuthenticated, IsUserInstance]
         return [permission() for permission in permission_classes]
 
-    @swagger_auto_schema(method='post', operation_description=_('set password'))
+    @swagger_auto_schema(method='post', operation_description=_('set password'), tags=['用户登录', '买家'])
     @action(detail=True, methods=['post'])
     def set_password(self, request, pk=None):
         user = self.get_object()

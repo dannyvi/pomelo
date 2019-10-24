@@ -41,12 +41,15 @@ refresh_response = openapi.Response(
 token = method_decorator(name='post',
                          decorator=swagger_auto_schema(
                              operation_description=_('login for access token.'),
-                             responses={'200':token_response})
+                             responses={'200':token_response},
+                             tags=['token']
+                         )
                          )(TokenObtainPairView)
 refresh = method_decorator(name='post',
                            decorator=swagger_auto_schema(
                                operation_description=_('refresh new access token.'),
-                               responses={'200': refresh_response}
+                               responses={'200': refresh_response},
+                               tags=['token']
                            ))(TokenRefreshView)
 
 urlpatterns = [

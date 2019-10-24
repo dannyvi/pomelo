@@ -26,7 +26,7 @@ class BaseGenerator(object):
 
     def generate_serializers(self, depth):
         content = self.serializer_content(depth)
-        filename = 'serializers.py'
+        filename = 'serializers.py.g'
         if self.write_file(content, filename):
             return '  - writing %s' % filename
         else:
@@ -34,7 +34,7 @@ class BaseGenerator(object):
 
     def generate_views(self):
         content = self.view_content()
-        filename = 'views.py'
+        filename = 'views.py.g'
         if self.write_file(content, filename):
             return '  - writing %s' % filename
         else:
@@ -42,7 +42,7 @@ class BaseGenerator(object):
 
     def generate_urls(self):
         content = self.url_content()
-        filename = 'urls.py'
+        filename = 'urls.py.g'
         if self.write_file(content, filename):
             return '  - writing %s' % filename
         else:
