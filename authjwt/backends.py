@@ -11,7 +11,7 @@ class MultiFieldLoginModelBackend(ModelBackend):
     """supports email, phone, username login"""
 
     def authenticate(self, request, username=None, password=None, **kwargs):
-        print(username, kwargs)
+        #print(username, kwargs)
         if username is None:
             username = kwargs.get(UserModel.USERNAME_FIELD)
         if '@' in username:

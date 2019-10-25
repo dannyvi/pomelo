@@ -84,4 +84,4 @@ class Command(AppCommand):
             result += generator.generate_views() + '\n'
             result += generator.generate_urls()
 
-        print(result)
+        #print(result)
