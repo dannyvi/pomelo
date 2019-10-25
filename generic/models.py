@@ -15,3 +15,8 @@ def upload_to(instance, filename):
 class Image(models.Model):
     """All image files are uploaded here and return to a charstring url."""
     url = models.ImageField(upload_to=upload_to)
+
+
+class Video(models.Model):
+    """All video files are uploaded here and return to a charstring url."""
+    url = models.FileField(upload_to=upload_to)
