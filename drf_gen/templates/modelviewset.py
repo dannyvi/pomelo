@@ -25,7 +25,7 @@ from {{ app }}.serializers import {{ serializers|join:', ' }}
 from {{ app }}.models import {{ models|join:', ' }}
 {% for model in models %}
 
-@swagger_viewset(_('{{ model }}'), _('{{ model }}'), _('{{ model }}'))
+@swagger_viewset(_('{{ model }}'), _('{{ model }}'), [_('{{ model }}']))
 class {{ model }}ViewSet(ModelViewSet):
     queryset = {{ model }}.objects.all()
     serializer_class = {{ model }}Serializer
