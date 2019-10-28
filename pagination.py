@@ -27,7 +27,9 @@ class Pagination(pagination.PageNumberPagination):
     def get_schema_fields(self, view):
         assert coreapi is not None, 'coreapi must be installed to use `get_schema_fields()`'
         assert coreschema is not None, 'coreschema must be installed to use `get_schema_fields()`'
-        return [
+        fields = super().get_schema_fields(view)
+
+        fields.append(
             coreapi.Field(
                 name=self.page_param,
                 required=False,
@@ -37,10 +39,12 @@ class Pagination(pagination.PageNumberPagination):
                 #    description=force_str(self.page_description)
                 #)
             )
-        ]
+        )
+        return fields
 
     def get_schema_operation_parameters(self, view):
-        return [
+        params = super().get_schema_operation_parameters(view)
+        params.append(
             {
                 'name': self.page_param,
                 'required': False,
@@ -50,4 +54,5 @@ class Pagination(pagination.PageNumberPagination):
                     'type': 'string',
                 },
             },
-        ]
+        )
+        return params
