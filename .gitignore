@@ -1,3 +1,5 @@
 .idea/
 __pycache__/
 .DS_Store
+drf_gen/**
+**/drf_gen/
