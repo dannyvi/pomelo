@@ -1,11 +1,13 @@
 from django.template import Template, Context
 import os.path
+from django.db.models import fields
 
 from .templates.serializer import SERIALIZER
 from .templates.apiview import API_URL, API_VIEW
 from .templates.viewset import VIEW_SET_URL, VIEW_SET_VIEW
 from .templates.function import FUNCTION_URL, FUNCTION_VIEW
 from .templates.modelviewset import MODEL_URL, MODEL_VIEW
+
 
 __all__ = ['BaseGenerator', 'APIViewGenerator', 'ViewSetGenerator',
            'FunctionViewGenerator', 'ModelViewSetGenerator']
@@ -20,6 +22,8 @@ class BaseGenerator(object):
         self.name = app_config.name
         self.serializer_template = Template(SERIALIZER)
         self.models = self.get_model_names()
+        self.models_and_keys = self.get_model_and_keys()
+        print(self.models_and_keys)
         self.serializers = self.get_serializer_names()
         self.view_template = Template(API_VIEW)
         self.url_template = Template(API_URL)
@@ -49,7 +53,10 @@ class BaseGenerator(object):
             return 'Url generation cancelled'
 
     def serializer_content(self, depth):
+        #context = Context({'app': self.name, 'models': self.models,
+        #                   'depth': depth})
         context = Context({'app': self.name, 'models': self.models,
+                           'models_keys': self.models_and_keys,
                            'depth': depth})
         return self.serializer_template.render(context)
 
@@ -61,6 +68,23 @@ class BaseGenerator(object):
     def url_content(self):
         context = Context({'app': self.name, 'models': self.models})
         return self.url_template.render(context)
+
+    def get_foreign_keys(self, model):
+        return [(f.name, f.related_model.__name__) for f in model._meta.fields if
+                isinstance(f, fields.related.ForeignKey)]
+
+    def get_manytomany_keys(self, model):
+        return [(f.name, f.related_model.__name__) for f in model._meta.fields if
+                isinstance(f, fields.related.ManyToManyField)]
+
+    def get_model_and_keys(self):
+        m_k = []
+        for m in self.app_config.get_models():
+            name = m.__name__
+            foreigns = self.get_foreign_keys(m)
+            manies = self.get_manytomany_keys(m)
+            m_k.append((name, foreigns, manies))
+        return m_k
 
     def get_model_names(self):
         return [m.__name__ for m in self.app_config.get_models()]
