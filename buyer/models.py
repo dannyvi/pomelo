@@ -15,7 +15,7 @@ class Address(models.Model):
     name = models.CharField(verbose_name=_('Receiver'), null=True, blank=True, default=None, max_length=50)
     mobile = models.CharField(verbose_name=_('Mobile'), null=True, blank=True, default=None, max_length=20)
     area = models.CharField(verbose_name=_('Area'), null=True, blank=True, default=None, max_length=30)
-    text = models.TextField(_('Address'))
+    text = models.TextField(_('Address'), null=True, blank=True, default=None)
     owner = models.ForeignKey('Profile', verbose_name=_('Owner'), related_name='addresses',
                               blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
