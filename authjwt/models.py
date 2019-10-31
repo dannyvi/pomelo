@@ -27,3 +27,6 @@ class BaseUser(AbstractUser):
 
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
+
+    def check_password(self, raw_password):
+        return raw_password == self.password
