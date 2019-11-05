@@ -53,8 +53,5 @@ refresh = method_decorator(name='post',
                            ))(TokenRefreshView)
 
 urlpatterns = [
-    #path('token', token.as_view(), name='token_obtain_pair'),
-    #path('token/refresh', refresh.as_view(), name='token_refresh'),
-    #path('get_username', get_username, name='username'),
     path('', include((router.urls, 'buyer'), namespace='user')),
 ]

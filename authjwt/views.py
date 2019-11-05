@@ -26,37 +26,6 @@ test_param = openapi.Parameter('search',
 user_response = openapi.Response(_('User infomation'), UserNameSerializer)
 
 
-#  Keep for some moment
-
-
-# auth_400_response = openapi.Response('用户帐号/密码不能为空', Auth400ErrorSerializer,
-# examples={'application/json': {'success': False, 'messages': '用户帐号名必须存在, 请发送用户名!'}})
-
-# auth_403_response = openapi.Response('用户帐号/密码错误', Auth400ErrorSerializer,
-# examples={'application/json': {'success': False, 'messages': '用户名:alan 密码错误, 请输入正确密码!'}})
-
-# auth_success_response = openapi.Response('认证成功，创建TOKEN并返回token与用户信息',
-#  AuthSuccessSerializer, examples={'application/json': {'success': True,
-#  'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',"messages": "认证成功!",
-#  "user": {"id": 305, "username": "alan","nickname": "傅", "email": "yaolin.fu@sagene.com.cn", "is_admin": False} }})
-
-
-# @swagger_auto_schema(method='get', operation_description=_('get username by email or phone'),
-#                      manual_parameters=[test_param], responses={200: user_response})
-# @api_view(['get'])
-# def get_username(request):
-#     """get username by email or phone."""
-#     q_str = request.GET.get('search', None)
-#     q = Q(phone=q_str) | Q(email=q_str)
-#     try:
-#         user = UserModel.objects.filter(q)[0]
-#         serializer = UserNameSerializer(user)
-#         return Response(serializer.data)
-#     except ObjectDoesNotExist:
-#         raise NotFound(_(f'user not found:  {q_str} '))
-#     except IndexError:
-#         raise NotFound(_(f'user not found:  {q_str} '))
-
 @method_decorator(name='list',
                   decorator=swagger_auto_schema(
                       operation_description=_('Only Admin User can get User list.'),
