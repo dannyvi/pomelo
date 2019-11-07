@@ -38,11 +38,9 @@ class BaseUserSerializer(serializers.ModelSerializer):
         username = validated_data.pop("username", None)
         if email is None and phone is None and username is None:
             raise FieldError(_("email or phone or username field required"))
-        # username = get_valid_username()
         validated_data.update(username=username, email=email, phone=phone)
         password = validated_data.pop('password', None)
         user = self.Meta.model(**validated_data)
-        # user.is_staff = True
         if password is not None:
             user.set_password(password)
         user.save()

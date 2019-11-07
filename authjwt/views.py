@@ -7,7 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
 from rest_framework.viewsets import ModelViewSet
 from .serializers import BaseUserSerializer, UserNameSerializer
-# from rest_framework.permissions import IsAdminUser
 from rest_framework import permissions
 from rest_framework.decorators import action
 from pomelo.serializers import PasswordSerializer

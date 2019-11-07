@@ -34,10 +34,6 @@ class Pagination(pagination.PageNumberPagination):
                 name=self.page_param,
                 required=False,
                 location='query',
-                #schema=coreschema.String(
-                    # title=force_str(self.page_title),
-                #    description=force_str(self.page_description)
-                #)
             )
         )
         return fields
