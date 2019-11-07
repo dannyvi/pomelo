@@ -2,12 +2,12 @@ from rest_framework.renderers import JSONRenderer
 
 def _expand_list_or_dict_recursively(data):
     if isinstance(data, dict):
-        return '\n'.join([f'{key} : {_expand_list_or_dict_recursively(value)}'
+        return ' '.join([f'{key}: {_expand_list_or_dict_recursively(value)}'
                           if key != 'detail' else
                           f'{_expand_list_or_dict_recursively(value)}' for
                           key, value in data.items() ])
     elif isinstance(data, list):
-        return '\n'.join([_expand_list_or_dict_recursively(d) for d in data])
+        return '     '.join([_expand_list_or_dict_recursively(d) for d in data])
     else:
         return data
 
