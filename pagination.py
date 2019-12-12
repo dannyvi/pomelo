@@ -4,6 +4,8 @@ from rest_framework.compat import coreapi, coreschema
 from django.utils.encoding import force_str
 
 class Pagination(pagination.PageNumberPagination):
+    page_size = 10
+    max_page_size=32
     page_param = 'no_page'
     page_title = 'No paging'
     page_description = 'Cancel paging'
@@ -36,6 +38,7 @@ class Pagination(pagination.PageNumberPagination):
                 location='query',
             )
         )
+
         return fields
 
     def get_schema_operation_parameters(self, view):
