@@ -6,6 +6,7 @@ from django.utils.encoding import force_str
 class Pagination(pagination.PageNumberPagination):
     page_size = 10
     max_page_size=32
+    page_size_query_param = 'size'
     page_param = 'no_page'
     page_title = 'No paging'
     page_description = 'Cancel paging'
@@ -38,7 +39,13 @@ class Pagination(pagination.PageNumberPagination):
                 location='query',
             )
         )
-
+        fields.append(
+            coreapi.Field(
+                name=self.page_size_query_param,
+                required=False,
+                location='query',
+            )
+        )
         return fields
 
     def get_schema_operation_parameters(self, view):
@@ -46,6 +53,17 @@ class Pagination(pagination.PageNumberPagination):
         params.append(
             {
                 'name': self.page_param,
+                'required': False,
+                'in': 'query',
+                'description': force_str(self.page_description),
+                'schema': {
+                    'type': 'string',
+                },
+            },
+        )
+        params.append(
+            {
+                'name': self.page_size_query_param,
                 'required': False,
                 'in': 'query',
                 'description': force_str(self.page_description),
