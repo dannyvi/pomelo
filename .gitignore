@@ -1,5 +1,6 @@
 .idea/
 __pycache__/
 .DS_Store
-drf_gen/**
-**/drf_gen/
+drf_gen/management/**
+drf_gen/templates/**
+drf_gen/generators.py
