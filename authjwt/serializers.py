@@ -14,6 +14,8 @@ User = get_user_model()
 def get_random_string(slen=40):
     return ''.join(random.sample(string.ascii_letters + string.digits, slen))
 
+def get_random_digit(slen=6):
+    return ''.join(random.sample(string.digits, slen))
 
 def get_valid_username():
     username = get_random_string()

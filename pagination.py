@@ -39,13 +39,7 @@ class Pagination(pagination.PageNumberPagination):
                 location='query',
             )
         )
-        fields.append(
-            coreapi.Field(
-                name=self.page_size_query_param,
-                required=False,
-                location='query',
-            )
-        )
+
         return fields
 
     def get_schema_operation_parameters(self, view):
@@ -61,15 +55,5 @@ class Pagination(pagination.PageNumberPagination):
                 },
             },
         )
-        params.append(
-            {
-                'name': self.page_size_query_param,
-                'required': False,
-                'in': 'query',
-                'description': force_str(self.page_description),
-                'schema': {
-                    'type': 'string',
-                },
-            },
-        )
+
         return params

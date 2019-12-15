@@ -23,6 +23,7 @@ class BaseUser(AbstractUser):
         null=True,
         default=None
     )
+    verify = models.CharField('验证码', null=True, default=None, max_length=6)
     REQUIRED_FIELDS = ['email']
 
     class Meta(AbstractUser.Meta):
