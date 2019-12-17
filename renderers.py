@@ -23,6 +23,8 @@ class PomeloRenderer(JSONRenderer):
                 success = False
                 if int(response.status_code) == 401 and data['detail'].code == 'not_authenticated':
                     status_code = 208
+                if int(response.status_code) == 401 and data['detail'].code == 'authenticated_failed':
+                    status_code = 209
                 else:
                     status_code = response.status_code
                 #print(status_code, data, data['detail'].code)
