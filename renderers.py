@@ -27,7 +27,8 @@ class PomeloRenderer(JSONRenderer):
                     elif data['detail'].code == 'authentication_failed':
                         status_code = 209
                 else:
-                    status_code = response.status_code
+                    pass
+                    #status_code = response.status_code
         except:
             pass
         if success:
