@@ -4,3 +4,5 @@ __pycache__/
 drf_gen/management/**
 drf_gen/templates/**
 drf_gen/generators.py
+templates/**
+*/templates/
