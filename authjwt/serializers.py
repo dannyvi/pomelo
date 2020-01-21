@@ -18,7 +18,7 @@ def get_random_digit(slen=6):
     return ''.join(random.sample(string.digits, slen))
 
 def get_valid_username():
-    username = get_random_string()
+    username = get_random_string(10)
     try:
         User.objects.get(username=username)
         return get_valid_username()
@@ -40,6 +40,8 @@ class BaseUserSerializer(serializers.ModelSerializer):
         username = validated_data.pop("username", None)
         if email is None and phone is None and username is None:
             raise FieldError(_("email or phone or username field required"))
+        if username == None:
+            username = get_valid_username()
         validated_data.update(username=username, email=email, phone=phone)
         password = validated_data.pop('password', None)
         user = self.Meta.model(**validated_data)

@@ -20,8 +20,8 @@ class BaseUser(AbstractUser):
         error_messages={
             'unique': _("A user with that username already exists."),
         },
-        null=True,
-        default=None
+        # null=True,
+        # default=None
     )
     verify = models.CharField('验证码', null=True, default=None, max_length=6)
     REQUIRED_FIELDS = ['email']
@@ -31,3 +31,6 @@ class BaseUser(AbstractUser):
 
     def check_password(self, raw_password):
         return raw_password == self.password
+
+    def __str__(self):
+        return self.username
