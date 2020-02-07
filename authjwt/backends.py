@@ -11,6 +11,7 @@ class MultiFieldLoginModelBackend(ModelBackend):
     """supports email, phone, username login"""
 
     def authenticate(self, request, username=None, password=None, verify=None, **kwargs):
+        print('authenticating')
         if username is None:
             username = kwargs.get(UserModel.USERNAME_FIELD)
         if '@' in username:
@@ -29,7 +30,7 @@ class MultiFieldLoginModelBackend(ModelBackend):
                     user.verify = None
                     user.save()
                     return user
-            elif user.check_password(password) and self.user_can_authenticate(user):
+            elif user.check_password(password): # and self.user_can_authenticate(user):
                 return user
 
     def has_perm(self, user_obj, perm, obj):
